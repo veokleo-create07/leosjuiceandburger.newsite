@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ArrowDownRight, ArrowUpRight, Smartphone, Ticket } from 'lucide-react';
 
 import { SiteButtonLink } from '@/components/site/button-link';
@@ -54,13 +53,11 @@ export default function Home() {
         <section id="hero" className="hero" aria-labelledby="hero-title">
           <Container className="hero__inner">
             <div className="hero__media" aria-hidden="true">
-              <Image
+              {/* oxlint-disable-next-line next/no-img-element -- avoids a vinext next/image runtime conflict */}
+              <img
                 className="hero__image"
                 src="/images/leos-hero-burger.png"
                 alt=""
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 72vw"
               />
               <span className="hero__media-label">
                 Juice / Burger / Leo&apos;s
