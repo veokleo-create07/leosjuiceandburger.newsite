@@ -32,8 +32,14 @@ export default function Home() {
             href="#hero"
             aria-label="Leo's Juice & Burger home"
           >
-            <span>LEO&apos;S</span>
-            <span className="wordmark__sub">JUICE &amp; BURGER</span>
+            {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
+            <img
+              className="brand-logo brand-logo--nav"
+              src="/images/leos-logo.png"
+              alt="Leo's Juice & Burger"
+              width="300"
+              height="290"
+            />
           </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
@@ -65,7 +71,16 @@ export default function Home() {
             </div>
 
             <div className="hero__copy">
-              <p className="hero__kicker">Leo&apos;s — Juice &amp; Burger</p>
+              <div className="hero__brand">
+                {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
+                <img
+                  className="brand-logo brand-logo--hero"
+                  src="/images/leos-logo.png"
+                  alt="Leo's Juice & Burger"
+                  width="300"
+                  height="290"
+                />
+              </div>
               <h1 id="hero-title" className="hero__title">
                 <span>Big flavour.</span>
                 <span>Zero small talk.</span>
