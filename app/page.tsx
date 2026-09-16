@@ -1,11 +1,11 @@
-import { ArrowDownRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowDownRight, ArrowUpRight, Smartphone, Ticket } from 'lucide-react';
 
 import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
 import { SectionPlaceholder } from '@/components/site/section-placeholder';
 
 const sections = [
-  { id: 'hero', index: '01', title: 'Hero', tone: 'cream' },
   {
     id: 'food-experience',
     index: '02',
@@ -28,7 +28,11 @@ export default function Home() {
     <div className="site-shell">
       <header className="site-header">
         <Container className="site-header__inner">
-          <a className="wordmark" href="#hero" aria-label="Leo's Juice & Burger home">
+          <a
+            className="wordmark"
+            href="#hero"
+            aria-label="Leo's Juice & Burger home"
+          >
             <span>LEO&apos;S</span>
             <span className="wordmark__sub">JUICE &amp; BURGER</span>
           </a>
@@ -39,14 +43,73 @@ export default function Home() {
             <a href="#reviews">Stories</a>
           </nav>
 
-          <SiteButtonLink href="#final-cta" size="compact">
-            Reserve
+          <SiteButtonLink href="#restaurant-info" size="compact">
+            Book
             <ArrowDownRight aria-hidden="true" />
           </SiteButtonLink>
         </Container>
       </header>
 
       <main>
+        <section id="hero" className="hero" aria-labelledby="hero-title">
+          <Container className="hero__inner">
+            <div className="hero__media" aria-hidden="true">
+              <Image
+                className="hero__image"
+                src="/images/leos-hero-burger.png"
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 72vw"
+              />
+              <span className="hero__media-label">
+                Juice / Burger / Leo&apos;s
+              </span>
+            </div>
+
+            <div className="hero__copy">
+              <p className="hero__kicker">Leo&apos;s — Juice &amp; Burger</p>
+              <h1 id="hero-title" className="hero__title">
+                <span>Big flavour.</span>
+                <span>Zero small talk.</span>
+              </h1>
+            </div>
+
+            <div className="hero__actions" aria-label="Ways to visit Leo's">
+              <SiteButtonLink
+                className="hero__action hero__action--1"
+                href="#restaurant-info"
+                size="large"
+              >
+                Book a Table
+                <ArrowUpRight aria-hidden="true" />
+              </SiteButtonLink>
+              <SiteButtonLink
+                className="hero__action hero__action--2"
+                href="#food-experience"
+                size="large"
+                variant="outline"
+              >
+                Order in App
+                <Smartphone aria-hidden="true" />
+              </SiteButtonLink>
+              <SiteButtonLink
+                className="hero__action hero__action--3"
+                href="#gutschein"
+                size="large"
+                variant="text"
+              >
+                Gutschein
+                <Ticket aria-hidden="true" />
+              </SiteButtonLink>
+            </div>
+
+            <p className="hero__index" aria-hidden="true">
+              01
+            </p>
+          </Container>
+        </section>
+
         {sections.map((section) => (
           <SectionPlaceholder key={section.id} {...section} />
         ))}
