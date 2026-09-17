@@ -1,16 +1,18 @@
-import { ArrowDownRight, ArrowUpRight, Smartphone, Ticket } from 'lucide-react';
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Clock3,
+  MapPin,
+  Phone,
+  Smartphone,
+  Ticket,
+} from 'lucide-react';
 
 import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
 import { SectionPlaceholder } from '@/components/site/section-placeholder';
 
 const sections = [
-  {
-    id: 'restaurant-info',
-    index: '03',
-    title: 'Restaurant Info',
-    tone: 'sand',
-  },
   { id: 'reviews', index: '04', title: 'Reviews', tone: 'cream' },
   { id: 'gutschein', index: '05', title: 'Gutschein', tone: 'olive' },
   { id: 'final-cta', index: '06', title: 'Final CTA', tone: 'charcoal' },
@@ -182,6 +184,93 @@ export default function Home() {
               <figcaption>05 / After dark</figcaption>
             </figure>
           </div>
+        </section>
+
+        <section
+          id="restaurant-info"
+          className="restaurant-info"
+          aria-labelledby="restaurant-info-title"
+        >
+          <Container className="restaurant-info__heading">
+            <p className="eyebrow">03 / Come by</p>
+            <h2 id="restaurant-info-title" className="restaurant-info__title">
+              Find us where
+              <span>Lübeck gets hungry.</span>
+            </h2>
+          </Container>
+
+          <Container className="restaurant-info__layout">
+            <div className="restaurant-info__details">
+              <div className="restaurant-detail">
+                <MapPin aria-hidden="true" />
+                <div>
+                  <p className="restaurant-detail__label">Address</p>
+                  <address>
+                    Mühlenstraße 49
+                    <br />
+                    23552 Lübeck
+                  </address>
+                </div>
+              </div>
+
+              <div className="restaurant-detail">
+                <Clock3 aria-hidden="true" />
+                <div>
+                  <p className="restaurant-detail__label">Opening hours</p>
+                  <dl className="restaurant-hours">
+                    <div>
+                      <dt>Monday</dt>
+                      <dd>17:00 — 22:00</dd>
+                    </div>
+                    <div>
+                      <dt>Tuesday — Sunday</dt>
+                      <dd>12:00 — 22:00</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div className="restaurant-detail">
+                <Phone aria-hidden="true" />
+                <div>
+                  <p className="restaurant-detail__label">Phone</p>
+                  <a
+                    className="restaurant-detail__phone"
+                    href="tel:+4945139774590"
+                  >
+                    0451 39774590
+                  </a>
+                </div>
+              </div>
+
+              <SiteButtonLink
+                className="restaurant-info__cta"
+                href="https://www.google.com/maps/search/?api=1&query=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck"
+                target="_blank"
+                rel="noreferrer"
+                size="large"
+              >
+                Get Directions
+                <ArrowUpRight aria-hidden="true" />
+              </SiteButtonLink>
+            </div>
+
+            <div className="restaurant-map">
+              <iframe
+                title="Map showing Leo's Juice & Burger at Mühlenstraße 49 in Lübeck"
+                src="https://www.google.com/maps?q=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="restaurant-map__caption" aria-hidden="true">
+                <span>53.86° N / 10.69° E</span>
+                <strong>Altstadt, Lübeck</strong>
+              </div>
+              <p className="restaurant-map__index" aria-hidden="true">
+                03
+              </p>
+            </div>
+          </Container>
         </section>
 
         {sections.map((section) => (
