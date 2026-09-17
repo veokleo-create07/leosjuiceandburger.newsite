@@ -6,12 +6,6 @@ import { SectionPlaceholder } from '@/components/site/section-placeholder';
 
 const sections = [
   {
-    id: 'food-experience',
-    index: '02',
-    title: 'Food Experience',
-    tone: 'warm-white',
-  },
-  {
     id: 'restaurant-info',
     index: '03',
     title: 'Restaurant Info',
@@ -120,6 +114,74 @@ export default function Home() {
               01
             </p>
           </Container>
+        </section>
+
+        <section
+          id="food-experience"
+          className="food-experience"
+          aria-labelledby="food-experience-title"
+        >
+          <Container className="food-experience__intro">
+            <p className="eyebrow">02 / Food Experience</p>
+            <h2 id="food-experience-title" className="food-experience__title">
+              Built for
+              <span>the crave.</span>
+            </h2>
+            <p className="food-experience__note">Hot. Cold. Always fresh.</p>
+          </Container>
+
+          <div className="food-experience__gallery">
+            <figure className="food-shot food-shot--burger">
+              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
+              <img
+                src="/images/leos-hero-burger.png"
+                alt="A towering double smash burger with melted cheese and crisp lettuce"
+              />
+              <figcaption>01 / The smash</figcaption>
+            </figure>
+
+            <figure className="food-shot food-shot--fries">
+              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
+              <img
+                src="/images/food-experience-fries.png"
+                alt="Hot hand-cut fries under cinematic restaurant lighting"
+              />
+              <figcaption>02 / The crunch</figcaption>
+            </figure>
+
+            <div className="food-experience__statement" aria-hidden="true">
+              <span>Fresh</span>
+              <span>hits</span>
+              <span>different.</span>
+            </div>
+
+            <figure className="food-shot food-shot--drinks">
+              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
+              <img
+                src="/images/food-experience-drinks.png"
+                alt="Two vivid fresh juices covered in cold condensation"
+              />
+              <figcaption>03 / The pour</figcaption>
+            </figure>
+
+            <figure className="food-shot food-shot--kitchen">
+              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
+              <img
+                src="/images/food-experience-kitchen.png"
+                alt="Leo's open kitchen alive during service"
+              />
+              <figcaption>04 / The heat</figcaption>
+            </figure>
+
+            <figure className="food-shot food-shot--restaurant">
+              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
+              <img
+                src="/images/food-experience-restaurant.png"
+                alt="A warm contemporary neighborhood restaurant at night"
+              />
+              <figcaption>05 / After dark</figcaption>
+            </figure>
+          </div>
         </section>
 
         {sections.map((section) => (
