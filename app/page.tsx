@@ -13,7 +13,6 @@ import { Container } from '@/components/site/container';
 import { SectionPlaceholder } from '@/components/site/section-placeholder';
 
 const sections = [
-  { id: 'gutschein', index: '05', title: 'Gutschein', tone: 'olive' },
   { id: 'final-cta', index: '06', title: 'Final CTA', tone: 'charcoal' },
 ] as const;
 
@@ -349,6 +348,71 @@ export default function Home() {
                   </footer>
                 </blockquote>
               ))}
+            </div>
+          </Container>
+        </section>
+
+        <section
+          id="gutschein"
+          className="gutschein"
+          aria-labelledby="gutschein-title"
+        >
+          <div className="gutschein__ticker" aria-hidden="true">
+            <span>Good taste, wrapped up. — Good taste, wrapped up. —</span>
+          </div>
+
+          <Container className="gutschein__layout">
+            <div className="gutschein__copy">
+              <p className="eyebrow">05 / The good gift</p>
+              <h2 id="gutschein-title" className="gutschein__title">
+                <span>Give Leo&apos;s.</span>
+                <span>Not socks.</span>
+              </h2>
+              <p className="gutschein__text">
+                Pick the value. Send it instantly. Let them choose the burger.
+              </p>
+              <SiteButtonLink
+                className="gutschein__cta"
+                href="https://www.bon-bon.de/gutschein/leos-juice-burger-luebeck/"
+                target="_blank"
+                rel="noreferrer"
+                size="large"
+              >
+                Buy Gutschein
+                <ArrowUpRight aria-hidden="true" />
+              </SiteButtonLink>
+            </div>
+
+            <div
+              className="voucher-stage"
+              aria-label="Leo's gift voucher preview"
+            >
+              <div className="voucher-stage__sheet voucher-stage__sheet--orange" />
+              <div className="voucher-stage__sheet voucher-stage__sheet--cream" />
+              <div className="voucher-card">
+                <div className="voucher-card__topline">
+                  {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
+                  <img
+                    src="/images/leos-logo.png"
+                    alt="Leo's Juice & Burger"
+                    width="300"
+                    height="290"
+                  />
+                  <span>No. 05</span>
+                </div>
+                <div className="voucher-card__main">
+                  <p>Gift</p>
+                  <p>Voucher</p>
+                  <span>For seriously good taste.</span>
+                </div>
+                <div className="voucher-card__footer">
+                  <span>Choose your value</span>
+                  <strong>€ —</strong>
+                </div>
+              </div>
+              <p className="voucher-stage__note">
+                Digital or printed / valid 3 years
+              </p>
             </div>
           </Container>
         </section>
