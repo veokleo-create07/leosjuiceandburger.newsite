@@ -472,12 +472,95 @@ export default function Home() {
       </main>
 
       <footer id="footer" className="site-footer">
-        <Container className="site-footer__inner">
-          <div>
-            <p className="eyebrow eyebrow--light">07 / Footer</p>
-            <p className="site-footer__mark">LEO&apos;S</p>
+        <Container>
+          <div className="site-footer__main">
+            <a
+              className="site-footer__brand"
+              href="#hero"
+              aria-label="Back to top"
+            >
+              {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
+              <img
+                src="/images/leos-logo.png"
+                alt="Leo's Juice & Burger"
+                width="300"
+                height="290"
+              />
+            </a>
+
+            <div className="site-footer__contact">
+              <p className="site-footer__label">Find us</p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mühlenstraße 49
+                <br />
+                23552 Lübeck
+              </a>
+            </div>
+
+            <div className="site-footer__contact">
+              <p className="site-footer__label">Talk to us</p>
+              <a href="tel:+4945139774590">0451 39774590</a>
+              <a
+                href="https://www.instagram.com/leosjuiceandburger/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+            </div>
+
+            <nav className="site-footer__actions" aria-label="Footer actions">
+              <a
+                href="https://www.leosjuiceandburger-luebeck.de/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a Table
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Order in App
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.bon-bon.de/gutschein/leos-juice-burger-luebeck/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Gutschein
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+            </nav>
           </div>
-          <p className="site-footer__note">Juice, burgers, good times.</p>
+
+          <div className="site-footer__bottom">
+            <p>© 2026 Organic Juice Bar GmbH</p>
+            <nav className="site-footer__legal" aria-label="Legal">
+              <a
+                href="https://www.juiceandburger.de/impressum/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Impressum
+              </a>
+              <a
+                href="https://www.juiceandburger.de/datenschutz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Datenschutz
+              </a>
+            </nav>
+          </div>
         </Container>
       </footer>
     </div>
