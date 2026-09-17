@@ -13,9 +13,41 @@ import { Container } from '@/components/site/container';
 import { SectionPlaceholder } from '@/components/site/section-placeholder';
 
 const sections = [
-  { id: 'reviews', index: '04', title: 'Reviews', tone: 'cream' },
   { id: 'gutschein', index: '05', title: 'Gutschein', tone: 'olive' },
   { id: 'final-cta', index: '06', title: 'Final CTA', tone: 'charcoal' },
+] as const;
+
+const reviews = [
+  {
+    quote:
+      'Die Kombination der Zutaten war perfekt abgestimmt und jede einzelne davon schmeckte sehr frisch.',
+    author: 'Jan',
+    source: 'Lieferando',
+    href: 'https://www.leos-juice-burger-lubeck.de/review',
+    className: 'review-quote--lead',
+  },
+  {
+    quote: 'Bester Burgerladen Lübecks.',
+    author: 'Louis T.',
+    source: 'Uber Eats',
+    href: 'https://www.ubereats.com/de/store/leos-juice-%26-burger-muhlenstrasse-49/FwyP9WIVVe2ISOoT6zkdYA',
+    className: 'review-quote--short',
+  },
+  {
+    quote:
+      'Top Qualität & super Service. Jedes Mal ein Muss, wenn ich in Lübeck bin.',
+    author: 'Lars S.',
+    source: 'Tripadvisor',
+    href: 'https://www.tripadvisor.de/Restaurant_Review-g187413-d8482489-Reviews-Leo_s_Juice_Burger-Lubeck_Schleswig_Holstein.html',
+    className: 'review-quote--service',
+  },
+  {
+    quote: 'Mein Magen ist nun nicht mehr leer und mein Herz ist voll!',
+    author: 'Ivana M.',
+    source: 'Google',
+    href: 'https://www.google.com/maps/search/?api=1&query=Leo%27s%20Juice%20%26%20Burger%20L%C3%BCbeck',
+    className: 'review-quote--heart',
+  },
 ] as const;
 
 export default function Home() {
@@ -269,6 +301,54 @@ export default function Home() {
               <p className="restaurant-map__index" aria-hidden="true">
                 03
               </p>
+            </div>
+          </Container>
+        </section>
+
+        <section
+          id="reviews"
+          className="reviews"
+          aria-labelledby="reviews-title"
+        >
+          <Container className="reviews__heading">
+            <p className="eyebrow">04 / Word on the street</p>
+            <div className="reviews__heading-copy">
+              <h2 id="reviews-title" className="reviews__title">
+                They said it.
+                <span>Not us.</span>
+              </h2>
+              <div
+                className="reviews__rating"
+                aria-label="Rated 4.7 out of 5 on Google"
+              >
+                <strong>4.7</strong>
+                <span>Google rating</span>
+              </div>
+            </div>
+          </Container>
+
+          <Container>
+            <div className="reviews__wall">
+              {reviews.map((review, index) => (
+                <blockquote
+                  className={`review-quote ${review.className}`}
+                  key={review.author}
+                >
+                  <span className="review-quote__mark" aria-hidden="true">
+                    “
+                  </span>
+                  <p>{review.quote}</p>
+                  <footer>
+                    <span>
+                      {String(index + 1).padStart(2, '0')} / {review.author}
+                    </span>
+                    <a href={review.href} target="_blank" rel="noreferrer">
+                      5/5 · {review.source}
+                      <ArrowUpRight aria-hidden="true" />
+                    </a>
+                  </footer>
+                </blockquote>
+              ))}
             </div>
           </Container>
         </section>
