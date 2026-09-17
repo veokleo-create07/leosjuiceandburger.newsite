@@ -10,11 +10,6 @@ import {
 
 import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
-import { SectionPlaceholder } from '@/components/site/section-placeholder';
-
-const sections = [
-  { id: 'final-cta', index: '06', title: 'Final CTA', tone: 'charcoal' },
-] as const;
 
 const reviews = [
   {
@@ -417,9 +412,63 @@ export default function Home() {
           </Container>
         </section>
 
-        {sections.map((section) => (
-          <SectionPlaceholder key={section.id} {...section} />
-        ))}
+        <section
+          id="final-cta"
+          className="final-cta"
+          aria-labelledby="final-cta-title"
+        >
+          <div className="final-cta__media" aria-hidden="true">
+            {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
+            <img src="/images/leos-hero-burger.png" alt="" />
+          </div>
+
+          <Container className="final-cta__inner">
+            <div className="final-cta__topline">
+              <p className="eyebrow eyebrow--light">06 / Your move</p>
+              <p>Lübeck / Mühlenstraße 49</p>
+            </div>
+
+            <h2 id="final-cta-title" className="final-cta__title">
+              <span>Hungry</span>
+              <span>yet?</span>
+            </h2>
+
+            <div
+              className="final-cta__actions"
+              aria-label="Visit or order from Leo's"
+            >
+              <SiteButtonLink
+                href="https://www.leosjuiceandburger-luebeck.de/"
+                target="_blank"
+                rel="noreferrer"
+                size="large"
+              >
+                Book a Table
+                <ArrowUpRight aria-hidden="true" />
+              </SiteButtonLink>
+              <SiteButtonLink
+                href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck.html"
+                target="_blank"
+                rel="noreferrer"
+                size="large"
+                variant="outline"
+              >
+                Order Now
+                <ArrowUpRight aria-hidden="true" />
+              </SiteButtonLink>
+              <SiteButtonLink
+                href="https://www.google.com/maps/search/?api=1&query=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck"
+                target="_blank"
+                rel="noreferrer"
+                size="large"
+                variant="text"
+              >
+                Get Directions
+                <ArrowUpRight aria-hidden="true" />
+              </SiteButtonLink>
+            </div>
+          </Container>
+        </section>
       </main>
 
       <footer id="footer" className="site-footer">
