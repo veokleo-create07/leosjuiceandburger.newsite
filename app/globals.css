@@ -99,6 +99,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
@@ -131,11 +132,12 @@ a {
 .page-container {
   width: min(100%, var(--container-max));
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
 }
 
 .site-shell {
-  min-width: 20rem;
+  min-width: 0;
   overflow: clip;
 }
 
@@ -223,6 +225,8 @@ a {
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  touch-action: manipulation;
   transition:
     background-color 220ms var(--ease-out),
     color 220ms var(--ease-out),
@@ -291,7 +295,6 @@ a {
   min-height: max(44rem, calc(100svh - var(--header-height)));
   border-bottom: 1px solid var(--charcoal);
   background: var(--cream);
-  scroll-margin-top: var(--header-height);
 }
 
 .hero__inner {
@@ -483,7 +486,6 @@ a {
   overflow: hidden;
   border-bottom: 1px solid var(--charcoal);
   background: var(--cream);
-  scroll-margin-top: var(--header-height);
 }
 
 .food-experience__intro {
@@ -682,7 +684,6 @@ a {
   overflow: hidden;
   border-bottom: 1px solid var(--charcoal);
   background: var(--cream);
-  scroll-margin-top: var(--header-height);
 }
 
 .restaurant-info__heading {
@@ -906,7 +907,6 @@ a {
   overflow: hidden;
   border-bottom: 1px solid var(--charcoal);
   background: var(--cream);
-  scroll-margin-top: var(--header-height);
 }
 
 .reviews__heading {
@@ -1026,6 +1026,7 @@ a {
   font-weight: 400;
   line-height: 0.94;
   letter-spacing: -0.055em;
+  overflow-wrap: break-word;
   text-wrap: balance;
   text-transform: uppercase;
 }
@@ -1113,7 +1114,6 @@ a {
   overflow: hidden;
   border-bottom: 1px solid var(--charcoal);
   background: var(--sand);
-  scroll-margin-top: var(--header-height);
 }
 
 .gutschein__ticker {
@@ -1383,7 +1383,6 @@ a {
   background: var(--charcoal);
   color: var(--cream);
   isolation: isolate;
-  scroll-margin-top: var(--header-height);
 }
 
 .final-cta__media {
@@ -1555,7 +1554,6 @@ a {
 .section-placeholder {
   min-height: max(36rem, calc(100svh - var(--header-height)));
   border-bottom: 1px solid var(--charcoal);
-  scroll-margin-top: var(--header-height);
 }
 
 .section-placeholder__inner {
@@ -1749,10 +1747,155 @@ a {
   gap: var(--space-5);
 }
 
+@media (min-width: 48rem) and (max-width: 70rem) {
+  :root {
+    --gutter: clamp(1.75rem, 4vw, 3rem);
+    --space-section: clamp(5rem, 10vw, 8rem);
+  }
+
+  .site-nav {
+    gap: clamp(1rem, 2.4vw, 2rem);
+  }
+
+  .hero__inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+    column-gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .hero__title {
+    width: min(9.8ch, 50vw);
+    font-size: clamp(4rem, 8.7vw, 7rem);
+  }
+
+  .hero__actions {
+    flex-wrap: wrap;
+  }
+
+  .hero__actions .site-button--large {
+    min-height: 3.5rem;
+    padding-inline: 1.25rem;
+  }
+
+  .food-experience__intro {
+    min-height: 28rem;
+  }
+
+  .food-experience__title,
+  .restaurant-info__title,
+  .reviews__title,
+  .gutschein__title {
+    font-size: clamp(4.5rem, 10.5vw, 7.5rem);
+  }
+
+  .food-shot--burger {
+    height: min(58rem, 74svh);
+  }
+
+  .food-shot--fries {
+    height: min(38rem, 56svh);
+    margin-top: 22svh;
+  }
+
+  .food-shot--drinks {
+    height: min(42rem, 62svh);
+  }
+
+  .food-shot--kitchen,
+  .food-shot--restaurant {
+    height: min(52rem, 68svh);
+  }
+
+  .restaurant-info__heading,
+  .reviews__heading {
+    grid-template-columns: minmax(9rem, 0.48fr) minmax(0, 2fr);
+  }
+
+  .restaurant-info__layout {
+    grid-template-columns: minmax(17rem, 0.86fr) minmax(0, 1.14fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .restaurant-detail address,
+  .restaurant-detail__phone,
+  .restaurant-hours {
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+  }
+
+  .restaurant-hours > div {
+    display: block;
+  }
+
+  .restaurant-hours dd {
+    margin-top: 0.2rem;
+    color: var(--orange);
+    text-align: left;
+  }
+
+  .restaurant-map {
+    min-height: 38rem;
+  }
+
+  .reviews__heading-copy {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .review-quote p,
+  .review-quote--short p {
+    font-size: clamp(3.2rem, 6.6vw, 5rem);
+  }
+
+  .gutschein__layout {
+    min-height: 46rem;
+    grid-template-columns: minmax(0, 0.92fr) minmax(22rem, 1.08fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .voucher-stage {
+    min-height: clamp(31rem, 51vw, 39rem);
+  }
+
+  .voucher-card__main p {
+    font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+  }
+
+  .final-cta__media {
+    width: min(36vw, 32rem);
+  }
+
+  .final-cta__topline {
+    padding-right: calc(min(36vw, 32rem) + var(--space-5));
+  }
+
+  .final-cta__title {
+    font-size: clamp(7rem, 15vw, 11rem);
+  }
+
+  .final-cta__actions {
+    flex-wrap: wrap;
+    max-width: calc(100% - min(36vw, 32rem) - var(--space-5));
+  }
+
+  .final-cta__actions .site-button--large {
+    min-height: 3.5rem;
+    padding-inline: 1.25rem;
+  }
+
+  .site-footer__main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__actions {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
 @media (max-width: 47.99rem) {
   :root {
-    --header-height: 4.5rem;
-    --gutter: 1.25rem;
+    --header-height: 4.25rem;
+    --gutter: clamp(1rem, 4.8vw, 1.5rem);
+    --space-8: 3.5rem;
   }
 
   .site-header__inner {
@@ -1764,8 +1907,13 @@ a {
   }
 
   .site-button--compact {
-    min-height: 2.5rem;
+    min-height: 2.75rem;
     padding-inline: 1rem;
+  }
+
+  .site-button--large {
+    min-height: 3.5rem;
+    padding-inline: 1.25rem;
   }
 
   .hero {
@@ -1781,7 +1929,7 @@ a {
   .hero__media {
     order: 1;
     width: calc(100% + var(--gutter));
-    min-height: clamp(18rem, 47svh, 29rem);
+    min-height: clamp(17rem, 44svh, 27rem);
     margin-left: calc(var(--gutter) * -1);
   }
 
@@ -1814,7 +1962,7 @@ a {
 
   .hero__title {
     width: 100%;
-    font-size: clamp(3.55rem, 17vw, 6rem);
+    font-size: clamp(3.4rem, 16.5vw, 5.75rem);
     line-height: 0.81;
   }
 
@@ -1880,7 +2028,7 @@ a {
   .food-shot--kitchen,
   .food-shot--restaurant {
     width: calc(100% - var(--gutter));
-    height: clamp(26rem, 72svh, 42rem);
+    height: clamp(23rem, 66svh, 38rem);
     margin: 0;
   }
 
@@ -1946,7 +2094,7 @@ a {
   }
 
   .restaurant-map {
-    min-height: min(34rem, 72svh);
+    min-height: clamp(25rem, 68svh, 32rem);
   }
 
   .restaurant-map__caption {
@@ -2040,7 +2188,7 @@ a {
   }
 
   .voucher-stage {
-    min-height: clamp(24rem, 100vw, 34rem);
+    min-height: clamp(22rem, 96vw, 32rem);
     margin-inline: calc(var(--gutter) * -0.35);
   }
 
@@ -2081,14 +2229,14 @@ a {
   }
 
   .final-cta {
-    min-height: max(44rem, calc(100svh - var(--header-height)));
+    min-height: auto;
   }
 
   .final-cta__media {
     position: relative;
     z-index: 0;
     width: 100%;
-    height: clamp(18rem, 42svh, 28rem);
+    height: clamp(17rem, 40svh, 25rem);
     border-right: 0;
     border-bottom: 1px solid var(--cream);
     border-left: 0;
@@ -2169,6 +2317,227 @@ a {
 
   .site-footer__legal {
     gap: var(--space-4);
+  }
+}
+
+@media (max-width: 30rem) {
+  .brand-logo--nav {
+    height: 2.9rem;
+  }
+
+  .site-header__inner > .site-button {
+    min-width: 5.25rem;
+  }
+
+  .hero__copy {
+    margin-top: -1.5rem;
+  }
+
+  .brand-logo--hero {
+    height: 4.75rem;
+  }
+
+  .hero__title,
+  .food-experience__title,
+  .restaurant-info__title,
+  .reviews__title,
+  .gutschein__title {
+    font-size: clamp(3.1rem, 16.2vw, 4.8rem);
+  }
+
+  .hero__actions {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+
+  .hero__action--3 {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100% !important;
+    min-height: 3rem !important;
+  }
+
+  .food-experience__intro {
+    min-height: 25rem;
+  }
+
+  .food-experience__statement {
+    margin-block: var(--space-7);
+    font-size: clamp(3rem, 15.5vw, 4.6rem);
+  }
+
+  .food-experience__statement span {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .food-shot,
+  .food-shot--burger,
+  .food-shot--fries,
+  .food-shot--drinks,
+  .food-shot--kitchen,
+  .food-shot--restaurant {
+    height: clamp(21rem, 61svh, 32rem);
+  }
+
+  .restaurant-detail {
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .restaurant-detail address,
+  .restaurant-detail__phone,
+  .restaurant-hours {
+    font-size: clamp(1.4rem, 7.2vw, 1.85rem);
+  }
+
+  .restaurant-map__caption strong {
+    font-size: 1.35rem;
+  }
+
+  .reviews__rating strong {
+    font-size: 3rem;
+  }
+
+  .review-quote p,
+  .review-quote--short p {
+    padding-left: 2.35rem;
+    font-size: clamp(2.1rem, 10.2vw, 3rem);
+  }
+
+  .review-quote__mark,
+  .review-quote--short .review-quote__mark,
+  .review-quote--heart .review-quote__mark {
+    font-size: 3.5rem;
+  }
+
+  .review-quote footer {
+    padding-left: 2.35rem;
+  }
+
+  .voucher-stage {
+    min-height: clamp(19rem, 90vw, 26rem);
+    margin-inline: 0;
+  }
+
+  .voucher-stage__sheet,
+  .voucher-card {
+    width: 94%;
+  }
+
+  .voucher-card__topline {
+    height: 3.5rem;
+  }
+
+  .voucher-card__main {
+    padding: var(--space-4);
+  }
+
+  .voucher-card__main p {
+    font-size: clamp(2.3rem, 12vw, 3.5rem);
+  }
+
+  .voucher-card__main span {
+    margin-top: var(--space-3);
+    font-size: 0.65rem;
+  }
+
+  .voucher-card__footer {
+    min-height: 3.25rem;
+  }
+
+  .voucher-stage__note {
+    display: none;
+  }
+
+  .final-cta__title {
+    margin-block: var(--space-7);
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .site-footer__main {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__brand,
+  .site-footer__actions {
+    grid-column: auto;
+  }
+
+  .site-footer__contact + .site-footer__contact {
+    padding-top: var(--space-5);
+    border-top: 1px solid color-mix(in srgb, var(--charcoal) 34%, transparent);
+  }
+
+  .site-footer__legal {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 47.99rem) and (max-height: 46rem) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__media {
+    min-height: clamp(15rem, 41svh, 21rem);
+  }
+}
+
+@media (max-width: 63.99rem) {
+  @supports (animation-timeline: view()) {
+    .food-shot,
+    .restaurant-info__title,
+    .restaurant-info__details,
+    .restaurant-map,
+    .reviews__title,
+    .reviews__rating,
+    .review-quote,
+    .gutschein__copy,
+    .voucher-stage,
+    .final-cta__title span:first-child,
+    .final-cta__title span:last-child,
+    .final-cta__actions,
+    .final-cta__media {
+      clip-path: none;
+      animation-name: mobile-content-reveal;
+      animation-range: entry 4% cover 26%;
+    }
+
+    .food-shot img,
+    .voucher-stage__sheet--orange {
+      animation: none;
+    }
+
+    .food-experience__statement span {
+      animation-range: entry 8% cover 32%;
+    }
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .hero__media:hover .hero__image,
+  .food-shot:hover img,
+  .voucher-stage:hover .voucher-card,
+  .final-cta:hover .final-cta__media img {
+    transform: none;
+  }
+
+  .restaurant-map:hover iframe {
+    filter: grayscale(1) sepia(0.2) contrast(1.06);
+  }
+}
+
+@keyframes mobile-content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

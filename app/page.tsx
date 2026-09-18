@@ -84,8 +84,15 @@ export default function Home() {
               {/* oxlint-disable-next-line next/no-img-element -- avoids a vinext next/image runtime conflict */}
               <img
                 className="hero__image"
-                src="/images/leos-hero-burger.png"
+                src="/images/leos-hero-burger.jpg"
+                srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
+                sizes="(max-width: 48rem) 100vw, 58vw"
                 alt=""
+                width="1672"
+                height="941"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               <span className="hero__media-label">
                 Juice / Burger / Leo&apos;s
@@ -162,8 +169,14 @@ export default function Home() {
             <figure className="food-shot food-shot--burger">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
               <img
-                src="/images/leos-hero-burger.png"
+                src="/images/leos-hero-burger.jpg"
+                srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
+                sizes="(max-width: 48rem) 100vw, 75vw"
                 alt="A towering double smash burger with melted cheese and crisp lettuce"
+                width="1672"
+                height="941"
+                loading="lazy"
+                decoding="async"
               />
               <figcaption>01 / The smash</figcaption>
             </figure>
@@ -171,8 +184,14 @@ export default function Home() {
             <figure className="food-shot food-shot--fries">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
               <img
-                src="/images/food-experience-fries.png"
+                src="/images/food-experience-fries.jpg"
+                srcSet="/images/food-experience-fries-640.jpg 640w, /images/food-experience-fries.jpg 1024w"
+                sizes="(max-width: 48rem) 94vw, 34vw"
                 alt="Hot hand-cut fries under cinematic restaurant lighting"
+                width="1024"
+                height="1536"
+                loading="lazy"
+                decoding="async"
               />
               <figcaption>02 / The crunch</figcaption>
             </figure>
@@ -186,8 +205,14 @@ export default function Home() {
             <figure className="food-shot food-shot--drinks">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
               <img
-                src="/images/food-experience-drinks.png"
+                src="/images/food-experience-drinks.jpg"
+                srcSet="/images/food-experience-drinks-640.jpg 640w, /images/food-experience-drinks.jpg 1145w"
+                sizes="(max-width: 48rem) 94vw, 42vw"
                 alt="Two vivid fresh juices covered in cold condensation"
+                width="1145"
+                height="1374"
+                loading="lazy"
+                decoding="async"
               />
               <figcaption>03 / The pour</figcaption>
             </figure>
@@ -195,8 +220,14 @@ export default function Home() {
             <figure className="food-shot food-shot--kitchen">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
               <img
-                src="/images/food-experience-kitchen.png"
+                src="/images/food-experience-kitchen.jpg"
+                srcSet="/images/food-experience-kitchen-800.jpg 800w, /images/food-experience-kitchen.jpg 1672w"
+                sizes="100vw"
                 alt="Leo's open kitchen alive during service"
+                width="1672"
+                height="941"
+                loading="lazy"
+                decoding="async"
               />
               <figcaption>04 / The heat</figcaption>
             </figure>
@@ -204,8 +235,14 @@ export default function Home() {
             <figure className="food-shot food-shot--restaurant">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
               <img
-                src="/images/food-experience-restaurant.png"
+                src="/images/food-experience-restaurant.jpg"
+                srcSet="/images/food-experience-restaurant-640.jpg 640w, /images/food-experience-restaurant.jpg 1024w"
+                sizes="(max-width: 48rem) 94vw, 67vw"
                 alt="A warm contemporary neighborhood restaurant at night"
+                width="1024"
+                height="1536"
+                loading="lazy"
+                decoding="async"
               />
               <figcaption>05 / After dark</figcaption>
             </figure>
@@ -331,7 +368,7 @@ export default function Home() {
                   <span className="review-quote__mark" aria-hidden="true">
                     “
                   </span>
-                  <p>{review.quote}</p>
+                  <p lang="de">{review.quote}</p>
                   <footer>
                     <span>
                       {String(index + 1).padStart(2, '0')} / {review.author}
@@ -419,7 +456,16 @@ export default function Home() {
         >
           <div className="final-cta__media" aria-hidden="true">
             {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-            <img src="/images/leos-hero-burger.png" alt="" />
+            <img
+              src="/images/leos-hero-burger.jpg"
+              srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
+              sizes="(max-width: 48rem) 100vw, 39vw"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
           <Container className="final-cta__inner">
