@@ -1237,9 +1237,9 @@ a {
 
 .voucher-card__topline img {
   width: auto;
-  height: 100%;
+  height: clamp(3.5rem, 6.8vw, 5.7rem);
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  clip-path: circle(48% at 50% 50%);
 }
 
 .voucher-card__topline span,
@@ -2206,6 +2206,10 @@ a {
     padding: var(--space-2) var(--space-4);
   }
 
+  .voucher-card__topline img {
+    height: 3.35rem;
+  }
+
   .voucher-card__main {
     padding: var(--space-5) var(--space-4);
   }
@@ -2428,6 +2432,10 @@ a {
 
   .voucher-card__topline {
     height: 3.5rem;
+  }
+
+  .voucher-card__topline img {
+    height: 2.45rem;
   }
 
   .voucher-card__main {
