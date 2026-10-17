@@ -34,12 +34,12 @@
 :root {
   color-scheme: light;
 
-  --cream: #fff7e8;
-  --charcoal: #1a1a18;
-  --orange: #f06a3c;
+  --cream: #f6eedd;
+  --charcoal: #301f19;
+  --orange: #eb613d;
   --olive: #7a7a45;
   --sand: #e9dcc7;
-  --warm-white: #fffcf7;
+  --warm-white: #fffdf7;
 
   --background: var(--cream);
   --foreground: var(--charcoal);
@@ -5436,5 +5436,496 @@ a {
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* Modern-retro art direction: warmer paper, quieter rules, and a consistent type voice. */
+:root {
+  --gutter: clamp(1.1rem, 5vw, 5rem);
+  --space-section: clamp(3.5rem, 6vw, 6rem);
+  --text-display: clamp(3.25rem, 8vw, 8rem);
+  --border: color-mix(in srgb, var(--charcoal) 24%, transparent);
+}
+
+body {
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.012em;
+}
+
+h1,
+h2,
+h3,
+.hero__title,
+.about-leos__content h2,
+.food-showcase__title,
+.digital-menu__header h2,
+.restaurant-info__title,
+.review-carousel__header h2,
+.review-carousel blockquote,
+.gutschein__title,
+.voucher-card__main p {
+  font-family: var(--font-display), Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.site-header {
+  border-bottom-color: color-mix(in srgb, var(--charcoal) 45%, transparent);
+  background: var(--cream);
+}
+
+.site-nav a {
+  font-weight: 600;
+}
+
+.site-button:not(.site-button--compact):not(.site-button--text),
+.site-button--compact,
+.digital-menu__footer a {
+  border-radius: 0.1rem;
+  letter-spacing: 0;
+}
+
+.hero {
+  min-height: 0;
+  border-bottom-color: color-mix(in srgb, var(--charcoal) 42%, transparent);
+}
+
+.hero__inner {
+  min-height: min(49rem, calc(100svh - var(--header-height)));
+  grid-template-columns: minmax(0, 0.9fr) minmax(27rem, 1.1fr);
+  column-gap: clamp(2rem, 4vw, 4.75rem);
+  padding-block: clamp(1.35rem, 2.8vw, 2.6rem);
+}
+
+.hero__media {
+  min-height: clamp(31rem, calc(100svh - 8rem), 43rem);
+  border: 1px solid color-mix(in srgb, var(--charcoal) 22%, transparent);
+  background: var(--charcoal);
+}
+
+.hero__copy {
+  padding-block: 2rem;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 clamp(1.25rem, 2.2vw, 2rem);
+  color: color-mix(in srgb, var(--charcoal) 68%, transparent);
+  font-size: 0.84rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  opacity: 0;
+  animation: hero-text-up 650ms var(--ease-out) 160ms forwards;
+}
+
+.hero__eyebrow::before {
+  width: 0.52rem;
+  height: 0.52rem;
+  background: var(--orange);
+  content: '';
+}
+
+.hero__title {
+  width: min(10.5ch, 74vw);
+  font-size: clamp(3.8rem, 6vw, 6.7rem);
+  line-height: 0.86;
+  letter-spacing: -0.067em;
+}
+
+.hero__title span:last-child {
+  color: var(--orange);
+}
+
+.hero__subtitle {
+  max-width: 34ch;
+  margin-top: clamp(1.5rem, 2.4vw, 2.25rem);
+  color: color-mix(in srgb, var(--charcoal) 80%, transparent);
+  font-size: clamp(1.05rem, 1.3vw, 1.22rem);
+  line-height: 1.48;
+}
+
+.hero__actions {
+  flex-wrap: wrap;
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  padding-bottom: 0;
+}
+
+.hero__actions .site-button--outline {
+  border-color: color-mix(in srgb, var(--charcoal) 70%, transparent);
+  background: transparent;
+}
+
+.about-leos {
+  background: #efe5d3;
+}
+
+.about-leos__layout {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(0rem, 2vw, 2rem);
+  padding-block: clamp(3.5rem, 5.4vw, 5.5rem);
+}
+
+.about-leos__media {
+  height: clamp(26rem, 36vw, 34rem);
+}
+
+.about-leos__content {
+  padding-left: clamp(2rem, 5vw, 5rem);
+}
+
+.about-leos__content h2 {
+  max-width: 11ch;
+  font-size: clamp(2.8rem, 4.3vw, 4.35rem);
+  line-height: 0.98;
+}
+
+.about-leos__body {
+  margin-top: 1.5rem;
+}
+
+.about-leos__details {
+  margin-top: 2rem;
+}
+
+.food-experience {
+  background: var(--cream);
+}
+
+.food-showcase {
+  padding-block: clamp(3.75rem, 5.2vw, 5.25rem);
+}
+
+.food-showcase__header {
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.food-showcase__title {
+  max-width: 13ch;
+  font-size: clamp(3rem, 5.1vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.food-gallery__media {
+  height: clamp(19rem, 28vw, 26rem);
+}
+
+.food-gallery__caption strong {
+  font-weight: 700;
+}
+
+.menu-section {
+  border-block-color: color-mix(in srgb, var(--charcoal) 30%, transparent);
+  background: var(--warm-white);
+}
+
+.digital-menu {
+  padding-block: clamp(3.75rem, 5.2vw, 5.25rem);
+}
+
+.digital-menu__header h2 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 4.8vw, 4.7rem);
+  line-height: 0.98;
+}
+
+.digital-menu__panel {
+  height: clamp(25rem, 35vw, 31rem);
+}
+
+.digital-menu__visual img {
+  display: block;
+}
+
+.restaurant-info {
+  border-bottom-color: color-mix(in srgb, var(--charcoal) 36%, transparent);
+  background: #efe5d3;
+}
+
+.restaurant-info__layout {
+  gap: clamp(2.25rem, 5vw, 5rem);
+  padding-block: clamp(3.5rem, 5.2vw, 5.25rem);
+}
+
+.restaurant-info__media {
+  aspect-ratio: 1.2;
+  border: 1px solid color-mix(in srgb, var(--charcoal) 18%, transparent);
+}
+
+.restaurant-info__title {
+  font-size: clamp(2.75rem, 4.25vw, 4.2rem);
+  line-height: 0.99;
+}
+
+.restaurant-info__detail p {
+  color: color-mix(in srgb, var(--charcoal) 65%, transparent);
+}
+
+.reviews {
+  background: var(--cream);
+}
+
+.review-carousel {
+  padding-block: clamp(3.5rem, 5.2vw, 5.25rem);
+}
+
+.review-carousel__header h2 {
+  font-size: clamp(2.8rem, 4.5vw, 4.25rem);
+  line-height: 1;
+}
+
+.review-carousel__review {
+  grid-template-columns: minmax(2.5rem, 0.12fr) minmax(0, 1fr);
+}
+
+.review-carousel blockquote {
+  max-width: 34ch;
+  font-size: clamp(1.7rem, 2.65vw, 2.8rem);
+  line-height: 1.09;
+  letter-spacing: -0.035em;
+}
+
+.gutschein {
+  background: #efe5d3;
+}
+
+.gutschein__layout {
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  padding-block: clamp(3.5rem, 5.2vw, 5.25rem);
+}
+
+.gutschein__title {
+  font-size: clamp(2.8rem, 4.35vw, 4.35rem);
+  line-height: 0.99;
+}
+
+.voucher-card {
+  box-shadow: 0.55rem 0.55rem 0 color-mix(in srgb, var(--charcoal) 16%, transparent);
+}
+
+.voucher-stage:hover .voucher-card {
+  box-shadow: 0.7rem 0.8rem 0 color-mix(in srgb, var(--charcoal) 13%, transparent);
+}
+
+.site-footer {
+  background: #301f19;
+}
+
+.site-footer__main {
+  padding-block: clamp(2rem, 3.4vw, 3rem);
+}
+
+.site-footer__column h2 {
+  color: #e9a28d;
+}
+
+@media (max-width: 67.99rem) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    column-gap: 1.75rem;
+  }
+
+  .hero__title {
+    width: 100%;
+    font-size: clamp(3.35rem, 5.8vw, 4.2rem);
+  }
+
+  .hero__actions {
+    gap: 0.7rem;
+  }
+
+  .hero__actions .site-button {
+    padding-inline: 1rem;
+  }
+
+  .about-leos__content {
+    padding-left: 1.75rem;
+  }
+
+  .digital-menu__panel {
+    height: 27rem;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 60rem) {
+  .hero__inner {
+    display: grid;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1.8rem;
+    padding-block: 1rem 2.5rem;
+  }
+
+  .hero__copy {
+    padding-block: 1rem 0;
+  }
+
+  .hero__title {
+    max-width: 12ch;
+    font-size: clamp(3.5rem, 7vw, 4.75rem);
+  }
+
+  .hero__media {
+    grid-area: auto;
+    min-height: 0;
+    height: clamp(22rem, 53vw, 28rem);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .hero__inner {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    padding-block: 0.75rem 2.25rem;
+  }
+
+  .hero__media {
+    order: 1;
+    width: 100%;
+    min-height: 0;
+    height: clamp(14.5rem, 57vw, 22rem);
+    margin: 0;
+  }
+
+  .hero__copy {
+    order: 2;
+    width: 100%;
+    margin: 1.6rem 0 0;
+    padding: 0;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .hero__title {
+    width: 100%;
+    font-size: clamp(3.05rem, 12.2vw, 4.25rem);
+    line-height: 0.9;
+  }
+
+  .hero__subtitle {
+    max-width: 34ch;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.65rem;
+    margin-top: 1.2rem;
+  }
+
+  .hero__actions .site-button {
+    min-height: 3.25rem;
+  }
+
+  .about-leos__layout {
+    gap: 0;
+    padding-block: 2.75rem;
+  }
+
+  .about-leos__content {
+    padding: 1.75rem 0 0;
+  }
+
+  .about-leos__content h2 {
+    max-width: 13ch;
+    font-size: clamp(2.45rem, 9.5vw, 3.55rem);
+  }
+
+  .food-showcase,
+  .digital-menu,
+  .review-carousel,
+  .restaurant-info__layout,
+  .gutschein__layout {
+    padding-block: 2.8rem;
+  }
+
+  .food-showcase__title {
+    max-width: 13ch;
+    font-size: clamp(2.6rem, 9.4vw, 3.6rem);
+  }
+
+  .food-gallery__media {
+    height: auto;
+    aspect-ratio: 1.14;
+  }
+
+  .digital-menu__header h2 {
+    max-width: 13ch;
+    font-size: clamp(2.55rem, 9vw, 3.6rem);
+  }
+
+  .restaurant-info__layout {
+    gap: 1.5rem;
+  }
+
+  .restaurant-info__media {
+    aspect-ratio: 1.35;
+  }
+
+  .restaurant-info__title {
+    font-size: clamp(2.5rem, 9vw, 3.45rem);
+  }
+
+  .review-carousel__header h2 {
+    font-size: clamp(2.5rem, 8.8vw, 3.5rem);
+  }
+
+  .review-carousel__review {
+    grid-template-columns: minmax(1.7rem, 0.12fr) minmax(0, 1fr);
+    column-gap: 0.9rem;
+    padding-block: 1.5rem;
+  }
+
+  .review-carousel blockquote {
+    font-size: clamp(1.5rem, 6.4vw, 2.15rem);
+  }
+
+  .gutschein__title {
+    font-size: clamp(2.5rem, 9vw, 3.5rem);
+  }
+
+  .voucher-stage {
+    aspect-ratio: 1.38;
+  }
+
+  .site-footer__main {
+    padding-block: 1.75rem;
+  }
+}
+
+@media (max-width: 26.875rem) {
+  .hero__title {
+    font-size: clamp(2.8rem, 11.8vw, 3.3rem);
+  }
+
+  .food-gallery__panel,
+  .food-gallery__panel[data-active='true'] {
+    width: min(80vw, 24rem);
+    min-width: min(80vw, 24rem);
+  }
+
+  .voucher-card__main p {
+    font-size: clamp(1.85rem, 8.7vw, 2.8rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__eyebrow,
+  .hero__title span,
+  .hero__action,
+  .hero__media,
+  .hero__image {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

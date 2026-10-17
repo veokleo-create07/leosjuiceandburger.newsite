@@ -20,7 +20,7 @@ const copy = {
     phonePlaceholder: 'Telefonnummer wird ergänzt',
     directions: 'Route planen',
     languageLabel: 'Sprache wählen',
-    imageAlt: 'Restaurantinnenraum mit offener Küche und warmem Licht',
+    imageAlt: 'Einblick in die offene Küche von Leo’s',
   },
   en: {
     eyebrow: 'Leo’s in Lübeck-Kücknitz',
@@ -34,7 +34,7 @@ const copy = {
     phonePlaceholder: 'Phone number to be added',
     directions: 'Get directions',
     languageLabel: 'Choose language',
-    imageAlt: 'Restaurant interior with an open kitchen and warm lighting',
+    imageAlt: 'A view into Leo’s open kitchen',
   },
 } as const;
 
@@ -50,12 +50,12 @@ export function RestaurantInfo() {
       <figure className="restaurant-info__media">
         {/* oxlint-disable-next-line next/no-img-element -- existing local restaurant photography */}
         <img
-          src="/images/food-experience-restaurant.jpg"
-          srcSet="/images/food-experience-restaurant-640.jpg 640w, /images/food-experience-restaurant.jpg 1024w"
+          src="/images/food-experience-kitchen.jpg"
+          srcSet="/images/food-experience-kitchen-800.jpg 800w, /images/food-experience-kitchen.jpg 1672w"
           sizes="(max-width: 47.99rem) calc(100vw - 2.5rem), 48vw"
           alt={text.imageAlt}
-          width="1024"
-          height="1536"
+          width="1672"
+          height="941"
           loading="lazy"
           decoding="async"
         />

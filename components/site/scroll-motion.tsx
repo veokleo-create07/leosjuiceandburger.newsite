@@ -15,11 +15,11 @@ export function ScrollMotion() {
       sections.forEach((section) => {
         gsap.fromTo(
           section,
-          { autoAlpha: 0, y: 14 },
+          { autoAlpha: 0.72, y: 10 },
           {
             autoAlpha: 1,
             y: 0,
-            duration: 0.62,
+            duration: 0.52,
             ease: 'power2.out',
             clearProps: 'transform,opacity,visibility',
             scrollTrigger: {

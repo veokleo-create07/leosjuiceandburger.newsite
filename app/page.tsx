@@ -48,6 +48,7 @@ export default function Home() {
         <section id="hero" className="hero" aria-labelledby="hero-title">
           <Container className="hero__inner">
             <div className="hero__copy">
+              <p className="hero__eyebrow">Leo’s · Lübeck-Kücknitz</p>
               <h1 id="hero-title" className="hero__title">
                 <span>Frisch gemacht.</span>
                 <span>Richtig lecker.</span>

@@ -1,17 +1,16 @@
 import type { Metadata } from 'next';
-import { Archivo, Archivo_Black } from 'next/font/google';
+import { Bricolage_Grotesque, DM_Sans } from 'next/font/google';
 import './globals.css';
 
-const archivo = Archivo({
+const dmSans = DM_Sans({
   variable: '--font-body',
   subsets: ['latin'],
   display: 'swap',
 });
 
-const archivoBlack = Archivo_Black({
+const bricolage = Bricolage_Grotesque({
   variable: '--font-display',
   subsets: ['latin'],
-  weight: '400',
   display: 'swap',
 });
 
@@ -27,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${archivo.variable} ${archivoBlack.variable}`}>{children}</body>
+      <body className={`${dmSans.variable} ${bricolage.variable}`}>{children}</body>
     </html>
   );
 }
