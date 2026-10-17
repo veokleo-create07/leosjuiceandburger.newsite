@@ -6,6 +6,7 @@ import {
   Phone,
 } from 'lucide-react';
 
+import { AboutLeos } from '@/components/site/about-leos';
 import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
 import { DigitalMenu } from '@/components/site/digital-menu';
@@ -128,6 +129,16 @@ export default function Home() {
                 decoding="async"
               />
             </div>
+          </Container>
+        </section>
+
+        <section
+          id="about-leos"
+          className="about-leos"
+          aria-labelledby="about-leos-title"
+        >
+          <Container>
+            <AboutLeos />
           </Container>
         </section>
 
