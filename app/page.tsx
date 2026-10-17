@@ -8,8 +8,7 @@ import { FoodGallery } from '@/components/site/food-gallery';
 import { Gutschein } from '@/components/site/gutschein';
 import { ReviewsCarousel } from '@/components/site/reviews-carousel';
 import { RestaurantInfo } from '@/components/site/restaurant-info';
-
-const kuecknitzMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Leo's Juice & Burger Lübeck-Kücknitz")}`;
+import { SiteFooter } from '@/components/site/site-footer';
 
 export default function Home() {
   return (
@@ -165,138 +164,8 @@ export default function Home() {
           </Container>
         </section>
 
-        <section
-          id="final-cta"
-          className="final-cta"
-          aria-labelledby="final-cta-title"
-        >
-          <Container className="final-cta__inner">
-            <div className="final-cta__topline">
-              <p className="eyebrow eyebrow--light">Your move</p>
-              <p>Lübeck-Kücknitz</p>
-            </div>
-
-            <h2 id="final-cta-title" className="final-cta__title">
-              <span>Hungry</span>
-              <span>yet?</span>
-            </h2>
-
-            <div
-              className="final-cta__actions"
-              aria-label="Visit or order from Leo's"
-            >
-              <SiteButtonLink
-                href="https://www.leosjuiceandburger-luebeck.de/"
-                target="_blank"
-                rel="noreferrer"
-                size="large"
-              >
-                Book a table
-                <ArrowUpRight aria-hidden="true" />
-              </SiteButtonLink>
-              <SiteButtonLink
-                href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck.html"
-                target="_blank"
-                rel="noreferrer"
-                size="large"
-                variant="outline"
-              >
-                Order now
-                <ArrowUpRight aria-hidden="true" />
-              </SiteButtonLink>
-              <SiteButtonLink
-                href={kuecknitzMapsUrl}
-                target="_blank"
-                rel="noreferrer"
-                size="large"
-                variant="text"
-              >
-                Get directions
-                <ArrowUpRight aria-hidden="true" />
-              </SiteButtonLink>
-            </div>
-          </Container>
-        </section>
       </main>
-
-      <footer id="footer" className="site-footer">
-        <Container>
-          <div className="site-footer__main">
-            <div className="site-footer__contact">
-              <p className="site-footer__label">Find us</p>
-              <a
-                href={kuecknitzMapsUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Lübeck-Kücknitz
-                <br />
-                Adresse wird ergänzt
-              </a>
-            </div>
-
-            <div className="site-footer__contact">
-              <p className="site-footer__label">Talk to us</p>
-              <span>Telefonnummer wird ergänzt</span>
-              <a
-                href="https://www.instagram.com/leosjuiceandburger/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-            </div>
-
-            <nav className="site-footer__actions" aria-label="Footer actions">
-              <a
-                href="https://www.leosjuiceandburger-luebeck.de/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Book a table
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-              <a
-                href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck.html"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Order in app
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-              <a
-                href="https://www.bon-bon.de/gutschein/leos-juice-burger-luebeck/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Gutschein
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-            </nav>
-          </div>
-
-          <div className="site-footer__bottom">
-            <p>© 2026 Organic Juice Bar GmbH</p>
-            <nav className="site-footer__legal" aria-label="Legal">
-              <a
-                href="https://www.juiceandburger.de/impressum/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Impressum
-              </a>
-              <a
-                href="https://www.juiceandburger.de/datenschutz/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Datenschutz
-              </a>
-            </nav>
-          </div>
-        </Container>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
