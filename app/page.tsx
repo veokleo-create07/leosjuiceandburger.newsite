@@ -8,6 +8,7 @@ import {
 
 import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
+import { DigitalMenu } from '@/components/site/digital-menu';
 import { FoodGallery } from '@/components/site/food-gallery';
 
 const reviews = [
@@ -64,7 +65,7 @@ export default function Home() {
           </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
-            <a href="#food-experience">Menu</a>
+            <a href="#menu">Speisekarte</a>
             <a href="#restaurant-info">Visit</a>
             <a href="#reviews">Stories</a>
           </nav>
@@ -148,6 +149,12 @@ export default function Home() {
             </header>
 
             <FoodGallery />
+          </Container>
+        </section>
+
+        <section id="menu" className="menu-section" aria-labelledby="menu-title">
+          <Container>
+            <DigitalMenu />
           </Container>
         </section>
 
