@@ -8,6 +8,7 @@ import {
 
 import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
+import { FoodGallery } from '@/components/site/food-gallery';
 
 const reviews = [
   {
@@ -134,76 +135,20 @@ export default function Home() {
           className="food-experience"
           aria-labelledby="food-experience-title"
         >
-          <Container className="food-experience__intro">
-            <p className="eyebrow">Food experience</p>
-            <h2 id="food-experience-title" className="food-experience__title">
-              Built for
-              <span>the crave.</span>
-            </h2>
-            <p className="food-experience__note">Hot. Cold. Always fresh.</p>
+          <Container className="food-showcase">
+            <header className="food-showcase__header">
+              <h2 id="food-experience-title" className="food-showcase__title">
+                <span>Mit Liebe gemacht.</span>
+                <span>Frisch serviert.</span>
+              </h2>
+              <p>
+                Drei Favoriten, eine Haltung: gute Zutaten, echtes Handwerk und
+                Geschmack ohne Umwege.
+              </p>
+            </header>
+
+            <FoodGallery />
           </Container>
-
-          <div className="food-experience__gallery">
-            <figure className="food-shot food-shot--fries">
-              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-              <img
-                src="/images/food-experience-fries.jpg"
-                srcSet="/images/food-experience-fries-640.jpg 640w, /images/food-experience-fries.jpg 1024w"
-                sizes="(max-width: 48rem) 94vw, 34vw"
-                alt="Hot hand-cut fries under cinematic restaurant lighting"
-                width="1024"
-                height="1536"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>The crunch</figcaption>
-            </figure>
-
-            <figure className="food-shot food-shot--drinks">
-              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-              <img
-                src="/images/food-experience-drinks.jpg"
-                srcSet="/images/food-experience-drinks-640.jpg 640w, /images/food-experience-drinks.jpg 1145w"
-                sizes="(max-width: 48rem) 94vw, 42vw"
-                alt="Two vivid fresh juices covered in cold condensation"
-                width="1145"
-                height="1374"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>The pour</figcaption>
-            </figure>
-
-            <figure className="food-shot food-shot--kitchen">
-              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-              <img
-                src="/images/food-experience-kitchen.jpg"
-                srcSet="/images/food-experience-kitchen-800.jpg 800w, /images/food-experience-kitchen.jpg 1672w"
-                sizes="100vw"
-                alt="Leo's open kitchen alive during service"
-                width="1672"
-                height="941"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>The heat</figcaption>
-            </figure>
-
-            <figure className="food-shot food-shot--restaurant">
-              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-              <img
-                src="/images/food-experience-restaurant.jpg"
-                srcSet="/images/food-experience-restaurant-640.jpg 640w, /images/food-experience-restaurant.jpg 1024w"
-                sizes="(max-width: 48rem) 94vw, 67vw"
-                alt="A warm contemporary neighborhood restaurant at night"
-                width="1024"
-                height="1536"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>After dark</figcaption>
-            </figure>
-          </div>
         </section>
 
         <section
