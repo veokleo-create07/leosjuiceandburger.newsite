@@ -4054,6 +4054,21 @@ a {
 }
 
 @media (max-width: 47.99rem) {
+  .about-leos__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-leos__media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-leos__content {
+    width: 100%;
+    min-width: 0;
+  }
+
   .hero__inner {
     display: flex;
     min-height: 0;
@@ -5827,11 +5842,27 @@ h3,
   }
 
   .about-leos__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
     gap: 0;
+    min-height: 0;
     padding-block: 2.75rem;
   }
 
+  .about-leos__media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-leos__media img {
+    object-position: center 58%;
+  }
+
   .about-leos__content {
+    width: 100%;
+    min-width: 0;
     padding: 1.75rem 0 0;
   }
 
