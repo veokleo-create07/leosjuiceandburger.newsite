@@ -15,8 +15,8 @@ const reviews = [
       de: 'Leo’s Juice & Burger · Lübeck',
       en: 'Leo’s Juice & Burger · Lübeck',
     },
-    address: 'Mühlenstraße 49, 23552 Lübeck',
-    href: "https://www.google.com/maps/search/?api=1&query=Leo's%20Juice%20%26%20Burger%2C%20M%C3%BChlenstra%C3%9Fe%2049%2C%20L%C3%BCbeck",
+    address: '',
+    href: "https://www.google.com/maps/search/?api=1&query=Leo's%20Juice%20%26%20Burger%20L%C3%BCbeck",
   },
   {
     id: 'hamburg',
@@ -143,7 +143,7 @@ export function ReviewsCarousel() {
               <MapPin aria-hidden="true" />
               <span>
                 <strong>{review.location[locale]}</strong>
-                <small>{review.address}</small>
+                {review.address && <small>{review.address}</small>}
               </span>
             </div>
             <a href={review.href} target="_blank" rel="noreferrer">

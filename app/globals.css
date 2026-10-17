@@ -4544,6 +4544,241 @@ a {
   }
 }
 
+/* Kücknitz location details */
+.restaurant-info {
+  overflow: clip;
+  border-bottom: 1px solid var(--charcoal);
+  background: var(--cream);
+}
+
+.restaurant-info__layout {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5.5rem);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+.restaurant-info__media {
+  order: 2;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1.22;
+  margin: 0;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.restaurant-info__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+}
+
+.restaurant-info__content {
+  order: 1;
+  min-width: 0;
+}
+
+.restaurant-info__heading {
+  display: block;
+  padding: 0;
+}
+
+.restaurant-info__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+}
+
+.restaurant-info__topline .eyebrow {
+  margin: 0;
+  padding: 0;
+}
+
+.restaurant-info__language {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+}
+
+.restaurant-info__language button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--charcoal);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  padding: 0.35rem 0.5rem;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.restaurant-info__language button:is(:hover, [aria-pressed='true']) {
+  border-color: var(--orange);
+}
+
+.restaurant-info__title {
+  max-width: 12ch;
+  margin: 0;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(2.65rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  overflow-wrap: break-word;
+  text-transform: none;
+}
+
+.restaurant-info__intro {
+  margin: 0.9rem 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.restaurant-info__details {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border-top: 1px solid color-mix(in srgb, var(--charcoal) 34%, transparent);
+}
+
+.restaurant-info__detail {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 1.2rem minmax(0, 1fr);
+  gap: 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--charcoal) 24%, transparent);
+  padding-block: 0.8rem;
+}
+
+.restaurant-info__detail > svg {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.16rem;
+  color: var(--orange);
+  stroke-width: 1.8;
+}
+
+.restaurant-info__detail p {
+  margin: 0 0 0.25rem;
+  color: var(--olive);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.restaurant-info__detail address,
+.restaurant-info__detail span,
+.restaurant-info__detail address a,
+.restaurant-info__detail .restaurant-info__phone {
+  margin: 0;
+  color: var(--charcoal);
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+  font-style: normal;
+  font-weight: 550;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.restaurant-info__detail address a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 180ms ease;
+}
+
+.restaurant-info__detail address a:hover {
+  color: var(--orange);
+}
+
+.restaurant-info__detail .restaurant-info__phone:hover {
+  color: var(--orange);
+}
+
+.restaurant-info__detail address a svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.restaurant-info__cta {
+  align-self: flex-start;
+  min-height: 3.2rem;
+  margin-top: 1.3rem;
+}
+
+@supports (animation-timeline: view()) {
+  .restaurant-info__media,
+  .restaurant-info__content {
+    animation: location-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+@keyframes location-reveal {
+  from { opacity: 0.45; transform: translateY(0.8rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 67.99rem) {
+  .restaurant-info__layout {
+    gap: 2rem;
+  }
+
+  .restaurant-info__title {
+    font-size: clamp(2.5rem, 5.4vw, 3.5rem);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .restaurant-info__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8rem;
+    padding-block: 3rem;
+  }
+
+  .restaurant-info__media {
+    aspect-ratio: 1.42;
+  }
+
+  .restaurant-info__title {
+    max-width: 12ch;
+    font-size: clamp(2.55rem, 10.2vw, 3.7rem);
+  }
+
+  .restaurant-info__intro {
+    margin-bottom: 1rem;
+  }
+
+  .restaurant-info__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .restaurant-info__media,
+  .restaurant-info__content,
+  .restaurant-info__language button,
+  .restaurant-info__detail address a {
+    animation: none;
+    transition: none;
+  }
+
+  .restaurant-info__media,
+  .restaurant-info__content {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Compact editorial voucher section */
 .gutschein {
   overflow: clip;

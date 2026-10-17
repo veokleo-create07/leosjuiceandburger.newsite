@@ -199,4 +199,4 @@ export const menuCategories: MenuCategory[] = [
 ];
 
 export const orderUrl =
-  'https://www.lieferando.de/speisekarte/leos-juice-burger-lubeck-lubecker-altstadt';
+  'https://www.restablo.de/restaurant/leos-juice-burger-luebeck.html';

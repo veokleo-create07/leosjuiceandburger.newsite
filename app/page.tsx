@@ -1,10 +1,4 @@
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Clock3,
-  MapPin,
-  Phone,
-} from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 
 import { AboutLeos } from '@/components/site/about-leos';
 import { SiteButtonLink } from '@/components/site/button-link';
@@ -13,6 +7,9 @@ import { DigitalMenu } from '@/components/site/digital-menu';
 import { FoodGallery } from '@/components/site/food-gallery';
 import { Gutschein } from '@/components/site/gutschein';
 import { ReviewsCarousel } from '@/components/site/reviews-carousel';
+import { RestaurantInfo } from '@/components/site/restaurant-info';
+
+const kuecknitzMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Leo's Juice & Burger Lübeck-Kücknitz")}`;
 
 export default function Home() {
   return (
@@ -143,82 +140,8 @@ export default function Home() {
           className="restaurant-info"
           aria-labelledby="restaurant-info-title"
         >
-          <Container className="restaurant-info__heading">
-            <p className="eyebrow">Come by</p>
-            <h2 id="restaurant-info-title" className="restaurant-info__title">
-              Find us where
-              <span>Lübeck gets hungry.</span>
-            </h2>
-          </Container>
-
-          <Container className="restaurant-info__layout">
-            <div className="restaurant-info__details">
-              <div className="restaurant-detail">
-                <MapPin aria-hidden="true" />
-                <div>
-                  <p className="restaurant-detail__label">Address</p>
-                  <address>
-                    Mühlenstraße 49
-                    <br />
-                    23552 Lübeck
-                  </address>
-                </div>
-              </div>
-
-              <div className="restaurant-detail">
-                <Clock3 aria-hidden="true" />
-                <div>
-                  <p className="restaurant-detail__label">Opening hours</p>
-                  <dl className="restaurant-hours">
-                    <div>
-                      <dt>Monday</dt>
-                      <dd>17:00 — 22:00</dd>
-                    </div>
-                    <div>
-                      <dt>Tuesday — Sunday</dt>
-                      <dd>12:00 — 22:00</dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-
-              <div className="restaurant-detail">
-                <Phone aria-hidden="true" />
-                <div>
-                  <p className="restaurant-detail__label">Phone</p>
-                  <a
-                    className="restaurant-detail__phone"
-                    href="tel:+4945139774590"
-                  >
-                    0451 39774590
-                  </a>
-                </div>
-              </div>
-
-              <SiteButtonLink
-                className="restaurant-info__cta"
-                href="https://www.google.com/maps/search/?api=1&query=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck"
-                target="_blank"
-                rel="noreferrer"
-                size="large"
-              >
-                Get directions
-                <ArrowUpRight aria-hidden="true" />
-              </SiteButtonLink>
-            </div>
-
-            <div className="restaurant-map">
-              <iframe
-                title="Map showing Leo's Juice & Burger at Mühlenstraße 49 in Lübeck"
-                src="https://www.google.com/maps?q=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className="restaurant-map__caption" aria-hidden="true">
-                <span>53.86° N / 10.69° E</span>
-                <strong>Altstadt, Lübeck</strong>
-              </div>
-            </div>
+          <Container>
+            <RestaurantInfo />
           </Container>
         </section>
 
@@ -250,7 +173,7 @@ export default function Home() {
           <Container className="final-cta__inner">
             <div className="final-cta__topline">
               <p className="eyebrow eyebrow--light">Your move</p>
-              <p>Lübeck / Mühlenstraße 49</p>
+              <p>Lübeck-Kücknitz</p>
             </div>
 
             <h2 id="final-cta-title" className="final-cta__title">
@@ -282,7 +205,7 @@ export default function Home() {
                 <ArrowUpRight aria-hidden="true" />
               </SiteButtonLink>
               <SiteButtonLink
-                href="https://www.google.com/maps/search/?api=1&query=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck"
+                href={kuecknitzMapsUrl}
                 target="_blank"
                 rel="noreferrer"
                 size="large"
@@ -302,19 +225,19 @@ export default function Home() {
             <div className="site-footer__contact">
               <p className="site-footer__label">Find us</p>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=M%C3%BChlenstra%C3%9Fe%2049%2C%2023552%20L%C3%BCbeck"
+                href={kuecknitzMapsUrl}
                 target="_blank"
                 rel="noreferrer"
               >
-                Mühlenstraße 49
+                Lübeck-Kücknitz
                 <br />
-                23552 Lübeck
+                Adresse wird ergänzt
               </a>
             </div>
 
             <div className="site-footer__contact">
               <p className="site-footer__label">Talk to us</p>
-              <a href="tel:+4945139774590">0451 39774590</a>
+              <span>Telefonnummer wird ergänzt</span>
               <a
                 href="https://www.instagram.com/leosjuiceandburger/"
                 target="_blank"
