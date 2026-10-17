@@ -4,8 +4,6 @@ import {
   Clock3,
   MapPin,
   Phone,
-  Smartphone,
-  Ticket,
 } from 'lucide-react';
 
 import { SiteButtonLink } from '@/components/site/button-link';
@@ -80,14 +78,47 @@ export default function Home() {
       <main>
         <section id="hero" className="hero" aria-labelledby="hero-title">
           <Container className="hero__inner">
-            <div className="hero__media" aria-hidden="true">
+            <div className="hero__copy">
+              <h1 id="hero-title" className="hero__title">
+                <span>Frisch gemacht.</span>
+                <span>Richtig lecker.</span>
+              </h1>
+              <p className="hero__subtitle">
+                Handgemachte Burger und frische Säfte in Lübeck-Kücknitz.
+              </p>
+              <div className="hero__actions" aria-label="Leo's besuchen oder bestellen">
+                <SiteButtonLink
+                  className="hero__action hero__action--1"
+                  href="https://www.leosjuiceandburger-luebeck.de/"
+                  target="_blank"
+                  rel="noreferrer"
+                  size="large"
+                >
+                  Tisch reservieren
+                  <ArrowUpRight aria-hidden="true" />
+                </SiteButtonLink>
+                <SiteButtonLink
+                  className="hero__action hero__action--2"
+                  href="https://www.restablo.de/restaurant/leos-juice-burger-luebeck.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  size="large"
+                  variant="outline"
+                >
+                  Jetzt bestellen
+                  <ArrowUpRight aria-hidden="true" />
+                </SiteButtonLink>
+              </div>
+            </div>
+
+            <div className="hero__media">
               {/* oxlint-disable-next-line next/no-img-element -- avoids a vinext next/image runtime conflict */}
               <img
                 className="hero__image"
                 src="/images/leos-hero-burger.jpg"
                 srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
-                sizes="(max-width: 48rem) 100vw, 58vw"
-                alt=""
+                sizes="(max-width: 67.99rem) calc(100vw - 2.5rem), 46vw"
+                alt="Frisch zubereiteter Burger bei Leo's Juice & Burger"
                 width="1672"
                 height="941"
                 loading="eager"
@@ -95,43 +126,6 @@ export default function Home() {
                 decoding="async"
               />
             </div>
-
-            <div className="hero__copy">
-              <h1 id="hero-title" className="hero__title">
-                <span>Big flavour.</span>
-                <span>Zero small talk.</span>
-              </h1>
-            </div>
-
-            <div className="hero__actions" aria-label="Ways to visit Leo's">
-              <SiteButtonLink
-                className="hero__action hero__action--1"
-                href="#restaurant-info"
-                size="large"
-              >
-                Book a table
-                <ArrowUpRight aria-hidden="true" />
-              </SiteButtonLink>
-              <SiteButtonLink
-                className="hero__action hero__action--2"
-                href="#food-experience"
-                size="large"
-                variant="outline"
-              >
-                Order in app
-                <Smartphone aria-hidden="true" />
-              </SiteButtonLink>
-              <SiteButtonLink
-                className="hero__action hero__action--3"
-                href="#gutschein"
-                size="large"
-                variant="text"
-              >
-                Gutschein
-                <Ticket aria-hidden="true" />
-              </SiteButtonLink>
-            </div>
-
           </Container>
         </section>
 
