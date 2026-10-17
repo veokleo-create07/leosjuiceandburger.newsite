@@ -5346,3 +5346,95 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Shared finishing rhythm: one clear size for full actions and a tighter nav action. */
+.site-button:not(.site-button--compact):not(.site-button--text) {
+  min-height: 3.5rem;
+  border-radius: 0.15rem;
+  padding-inline: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.site-button--compact {
+  min-height: 2.75rem;
+  border-radius: 0.15rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
+
+.about-leos__layout {
+  min-height: 0;
+  padding-block: clamp(3.5rem, 5vw, 5rem);
+}
+
+.food-showcase,
+.digital-menu {
+  padding-block: clamp(3.75rem, 5.25vw, 5rem);
+}
+
+.review-carousel {
+  padding-block: clamp(3.5rem, 5vw, 5rem);
+}
+
+@media (min-width: 68rem) {
+  .food-showcase__title {
+    max-width: 15ch;
+    font-size: clamp(3.25rem, 5vw, 4.8rem);
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 67.99rem) {
+  .food-showcase__title {
+    max-width: 15ch;
+    font-size: clamp(3.25rem, 7.2vw, 4.5rem);
+  }
+}
+
+.restaurant-info__layout,
+.gutschein__layout {
+  padding-block: clamp(3.25rem, 5vw, 5rem);
+}
+
+/* Use the GSAP reveals consistently, without layering older view-timeline reveals. */
+@supports (animation-timeline: view()) {
+  .about-leos__media,
+  .about-leos__content,
+  .food-showcase__header,
+  .food-gallery,
+  .restaurant-info__media,
+  .restaurant-info__content,
+  .gutschein__copy,
+  .voucher-stage {
+    animation: none !important;
+    animation-timeline: auto !important;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .about-leos__layout {
+    padding-block: 2.75rem;
+  }
+
+  .food-showcase,
+  .digital-menu {
+    padding-block: 3.25rem;
+  }
+
+  .review-carousel {
+    padding-block: 3rem;
+  }
+
+  .restaurant-info__layout,
+  .gutschein__layout {
+    padding-block: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

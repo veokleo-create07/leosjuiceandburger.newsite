@@ -17,7 +17,7 @@ const archivoBlack = Archivo_Black({
 
 export const metadata: Metadata = {
   title: "Leo's Juice & Burger",
-  description: "Fresh juice, bold burgers, and good times at Leo's.",
+  description: "Handgemachte Burger und frische Säfte bei Leo's in Lübeck-Kücknitz.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body className={`${archivo.variable} ${archivoBlack.variable}`}>{children}</body>
     </html>
   );

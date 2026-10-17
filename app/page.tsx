@@ -9,6 +9,7 @@ import { Gutschein } from '@/components/site/gutschein';
 import { ReviewsCarousel } from '@/components/site/reviews-carousel';
 import { RestaurantInfo } from '@/components/site/restaurant-info';
 import { SiteFooter } from '@/components/site/site-footer';
+import { ScrollMotion } from '@/components/site/scroll-motion';
 
 export default function Home() {
   return (
@@ -30,14 +31,14 @@ export default function Home() {
             />
           </a>
 
-          <nav className="site-nav" aria-label="Primary navigation">
+          <nav className="site-nav" aria-label="Hauptnavigation">
             <a href="#menu">Speisekarte</a>
-            <a href="#restaurant-info">Visit</a>
-            <a href="#reviews">Stories</a>
+            <a href="#restaurant-info">Standort</a>
+            <a href="#reviews">Gästestimmen</a>
           </nav>
 
           <SiteButtonLink href="#restaurant-info" size="compact">
-            Book
+            Kontakt
             <ArrowDownRight aria-hidden="true" />
           </SiteButtonLink>
         </Container>
@@ -100,6 +101,7 @@ export default function Home() {
         <section
           id="about-leos"
           className="about-leos"
+          data-scroll-reveal
           aria-labelledby="about-leos-title"
         >
           <Container>
@@ -110,6 +112,7 @@ export default function Home() {
         <section
           id="food-experience"
           className="food-experience"
+          data-scroll-reveal
           aria-labelledby="food-experience-title"
         >
           <Container className="food-showcase">
@@ -128,7 +131,7 @@ export default function Home() {
           </Container>
         </section>
 
-        <section id="menu" className="menu-section" aria-labelledby="menu-title">
+        <section id="menu" className="menu-section" data-scroll-reveal aria-labelledby="menu-title">
           <Container>
             <DigitalMenu />
           </Container>
@@ -137,6 +140,7 @@ export default function Home() {
         <section
           id="restaurant-info"
           className="restaurant-info"
+          data-scroll-reveal
           aria-labelledby="restaurant-info-title"
         >
           <Container>
@@ -147,6 +151,7 @@ export default function Home() {
         <section
           id="reviews"
           className="reviews"
+          data-scroll-reveal
           aria-labelledby="reviews-title"
         >
           <Container>
@@ -157,6 +162,7 @@ export default function Home() {
         <section
           id="gutschein"
           className="gutschein"
+          data-scroll-reveal
           aria-labelledby="gutschein-title"
         >
           <Container>
@@ -166,6 +172,7 @@ export default function Home() {
 
       </main>
       <SiteFooter />
+      <ScrollMotion />
     </div>
   );
 }
