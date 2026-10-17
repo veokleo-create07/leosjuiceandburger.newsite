@@ -94,22 +94,9 @@ export default function Home() {
                 fetchPriority="high"
                 decoding="async"
               />
-              <span className="hero__media-label">
-                Juice / Burger / Leo&apos;s
-              </span>
             </div>
 
             <div className="hero__copy">
-              <div className="hero__brand">
-                {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
-                <img
-                  className="brand-logo brand-logo--hero"
-                  src="/images/leos-logo.png"
-                  alt="Leo's Juice & Burger"
-                  width="300"
-                  height="290"
-                />
-              </div>
               <h1 id="hero-title" className="hero__title">
                 <span>Big flavour.</span>
                 <span>Zero small talk.</span>
@@ -122,7 +109,7 @@ export default function Home() {
                 href="#restaurant-info"
                 size="large"
               >
-                Book a Table
+                Book a table
                 <ArrowUpRight aria-hidden="true" />
               </SiteButtonLink>
               <SiteButtonLink
@@ -131,7 +118,7 @@ export default function Home() {
                 size="large"
                 variant="outline"
               >
-                Order in App
+                Order in app
                 <Smartphone aria-hidden="true" />
               </SiteButtonLink>
               <SiteButtonLink
@@ -145,9 +132,6 @@ export default function Home() {
               </SiteButtonLink>
             </div>
 
-            <p className="hero__index" aria-hidden="true">
-              01
-            </p>
           </Container>
         </section>
 
@@ -157,7 +141,7 @@ export default function Home() {
           aria-labelledby="food-experience-title"
         >
           <Container className="food-experience__intro">
-            <p className="eyebrow">02 / Food Experience</p>
+            <p className="eyebrow">Food experience</p>
             <h2 id="food-experience-title" className="food-experience__title">
               Built for
               <span>the crave.</span>
@@ -166,21 +150,6 @@ export default function Home() {
           </Container>
 
           <div className="food-experience__gallery">
-            <figure className="food-shot food-shot--burger">
-              {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-              <img
-                src="/images/leos-hero-burger.jpg"
-                srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
-                sizes="(max-width: 48rem) 100vw, 75vw"
-                alt="A towering double smash burger with melted cheese and crisp lettuce"
-                width="1672"
-                height="941"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>01 / The smash</figcaption>
-            </figure>
-
             <figure className="food-shot food-shot--fries">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
               <img
@@ -193,14 +162,8 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>02 / The crunch</figcaption>
+              <figcaption>The crunch</figcaption>
             </figure>
-
-            <div className="food-experience__statement" aria-hidden="true">
-              <span>Fresh</span>
-              <span>hits</span>
-              <span>different.</span>
-            </div>
 
             <figure className="food-shot food-shot--drinks">
               {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
@@ -214,7 +177,7 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>03 / The pour</figcaption>
+              <figcaption>The pour</figcaption>
             </figure>
 
             <figure className="food-shot food-shot--kitchen">
@@ -229,7 +192,7 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>04 / The heat</figcaption>
+              <figcaption>The heat</figcaption>
             </figure>
 
             <figure className="food-shot food-shot--restaurant">
@@ -244,7 +207,7 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>05 / After dark</figcaption>
+              <figcaption>After dark</figcaption>
             </figure>
           </div>
         </section>
@@ -255,7 +218,7 @@ export default function Home() {
           aria-labelledby="restaurant-info-title"
         >
           <Container className="restaurant-info__heading">
-            <p className="eyebrow">03 / Come by</p>
+            <p className="eyebrow">Come by</p>
             <h2 id="restaurant-info-title" className="restaurant-info__title">
               Find us where
               <span>Lübeck gets hungry.</span>
@@ -313,7 +276,7 @@ export default function Home() {
                 rel="noreferrer"
                 size="large"
               >
-                Get Directions
+                Get directions
                 <ArrowUpRight aria-hidden="true" />
               </SiteButtonLink>
             </div>
@@ -329,9 +292,6 @@ export default function Home() {
                 <span>53.86° N / 10.69° E</span>
                 <strong>Altstadt, Lübeck</strong>
               </div>
-              <p className="restaurant-map__index" aria-hidden="true">
-                03
-              </p>
             </div>
           </Container>
         </section>
@@ -342,7 +302,7 @@ export default function Home() {
           aria-labelledby="reviews-title"
         >
           <Container className="reviews__heading">
-            <p className="eyebrow">04 / Word on the street</p>
+            <p className="eyebrow">Word on the street</p>
             <div className="reviews__heading-copy">
               <h2 id="reviews-title" className="reviews__title">
                 They said it.
@@ -360,7 +320,7 @@ export default function Home() {
 
           <Container>
             <div className="reviews__wall">
-              {reviews.map((review, index) => (
+              {reviews.map((review) => (
                 <blockquote
                   className={`review-quote ${review.className}`}
                   key={review.author}
@@ -370,9 +330,7 @@ export default function Home() {
                   </span>
                   <p lang="de">{review.quote}</p>
                   <footer>
-                    <span>
-                      {String(index + 1).padStart(2, '0')} / {review.author}
-                    </span>
+                    <span>{review.author}</span>
                     <a href={review.href} target="_blank" rel="noreferrer">
                       5/5 · {review.source}
                       <ArrowUpRight aria-hidden="true" />
@@ -389,13 +347,9 @@ export default function Home() {
           className="gutschein"
           aria-labelledby="gutschein-title"
         >
-          <div className="gutschein__ticker" aria-hidden="true">
-            <span>Good taste, wrapped up. — Good taste, wrapped up. —</span>
-          </div>
-
           <Container className="gutschein__layout">
             <div className="gutschein__copy">
-              <p className="eyebrow">05 / The good gift</p>
+              <p className="eyebrow">The good gift</p>
               <h2 id="gutschein-title" className="gutschein__title">
                 <span>Give Leo&apos;s.</span>
                 <span>Not socks.</span>
@@ -430,7 +384,6 @@ export default function Home() {
                     width="300"
                     height="290"
                   />
-                  <span>No. 05</span>
                 </div>
                 <div className="voucher-card__main">
                   <p>Gift</p>
@@ -454,23 +407,9 @@ export default function Home() {
           className="final-cta"
           aria-labelledby="final-cta-title"
         >
-          <div className="final-cta__media" aria-hidden="true">
-            {/* oxlint-disable-next-line next/no-img-element -- static campaign image */}
-            <img
-              src="/images/leos-hero-burger.jpg"
-              srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
-              sizes="(max-width: 48rem) 100vw, 39vw"
-              alt=""
-              width="1672"
-              height="941"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
           <Container className="final-cta__inner">
             <div className="final-cta__topline">
-              <p className="eyebrow eyebrow--light">06 / Your move</p>
+              <p className="eyebrow eyebrow--light">Your move</p>
               <p>Lübeck / Mühlenstraße 49</p>
             </div>
 
@@ -489,7 +428,7 @@ export default function Home() {
                 rel="noreferrer"
                 size="large"
               >
-                Book a Table
+                Book a table
                 <ArrowUpRight aria-hidden="true" />
               </SiteButtonLink>
               <SiteButtonLink
@@ -499,7 +438,7 @@ export default function Home() {
                 size="large"
                 variant="outline"
               >
-                Order Now
+                Order now
                 <ArrowUpRight aria-hidden="true" />
               </SiteButtonLink>
               <SiteButtonLink
@@ -509,7 +448,7 @@ export default function Home() {
                 size="large"
                 variant="text"
               >
-                Get Directions
+                Get directions
                 <ArrowUpRight aria-hidden="true" />
               </SiteButtonLink>
             </div>
@@ -520,20 +459,6 @@ export default function Home() {
       <footer id="footer" className="site-footer">
         <Container>
           <div className="site-footer__main">
-            <a
-              className="site-footer__brand"
-              href="#hero"
-              aria-label="Back to top"
-            >
-              {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
-              <img
-                src="/images/leos-logo.png"
-                alt="Leo's Juice & Burger"
-                width="300"
-                height="290"
-              />
-            </a>
-
             <div className="site-footer__contact">
               <p className="site-footer__label">Find us</p>
               <a
@@ -566,7 +491,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Book a Table
+                Book a table
                 <ArrowUpRight aria-hidden="true" />
               </a>
               <a
@@ -574,7 +499,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Order in App
+                Order in app
                 <ArrowUpRight aria-hidden="true" />
               </a>
               <a
