@@ -11,6 +11,7 @@ import { SiteButtonLink } from '@/components/site/button-link';
 import { Container } from '@/components/site/container';
 import { DigitalMenu } from '@/components/site/digital-menu';
 import { FoodGallery } from '@/components/site/food-gallery';
+import { Gutschein } from '@/components/site/gutschein';
 import { ReviewsCarousel } from '@/components/site/reviews-carousel';
 
 export default function Home() {
@@ -236,58 +237,8 @@ export default function Home() {
           className="gutschein"
           aria-labelledby="gutschein-title"
         >
-          <Container className="gutschein__layout">
-            <div className="gutschein__copy">
-              <p className="eyebrow">The good gift</p>
-              <h2 id="gutschein-title" className="gutschein__title">
-                <span>Give Leo&apos;s.</span>
-                <span>Not socks.</span>
-              </h2>
-              <p className="gutschein__text">
-                Pick the value. Send it instantly. Let them choose the burger.
-              </p>
-              <SiteButtonLink
-                className="gutschein__cta"
-                href="https://www.bon-bon.de/gutschein/leos-juice-burger-luebeck/"
-                target="_blank"
-                rel="noreferrer"
-                size="large"
-              >
-                Buy Gutschein
-                <ArrowUpRight aria-hidden="true" />
-              </SiteButtonLink>
-            </div>
-
-            <div
-              className="voucher-stage"
-              aria-label="Leo's gift voucher preview"
-            >
-              <div className="voucher-stage__sheet voucher-stage__sheet--orange" />
-              <div className="voucher-stage__sheet voucher-stage__sheet--cream" />
-              <div className="voucher-card">
-                <div className="voucher-card__topline">
-                  {/* oxlint-disable-next-line next/no-img-element -- local brand asset renders without vinext image runtime overhead */}
-                  <img
-                    src="/images/leos-logo.png"
-                    alt="Leo's Juice & Burger"
-                    width="300"
-                    height="290"
-                  />
-                </div>
-                <div className="voucher-card__main">
-                  <p>Gift</p>
-                  <p>Voucher</p>
-                  <span>For seriously good taste.</span>
-                </div>
-                <div className="voucher-card__footer">
-                  <span>Choose your value</span>
-                  <strong>€ —</strong>
-                </div>
-              </div>
-              <p className="voucher-stage__note">
-                Digital or printed / valid 3 years
-              </p>
-            </div>
+          <Container>
+            <Gutschein />
           </Container>
         </section>
 
