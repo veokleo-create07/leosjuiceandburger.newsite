@@ -231,7 +231,8 @@ a {
     background-color 220ms var(--ease-out),
     color 220ms var(--ease-out),
     border-color 220ms var(--ease-out),
-    transform 220ms var(--ease-out);
+    transform 220ms var(--ease-out),
+    box-shadow 220ms var(--ease-out);
 }
 
 .site-button svg {
@@ -245,7 +246,19 @@ a {
 }
 
 .site-button:active {
-  transform: translateY(1px);
+  box-shadow: none;
+  transform: translateY(1px) scale(0.99);
+}
+
+@media (hover: hover) {
+  .site-button:hover {
+    box-shadow: 0 0.22rem 0 color-mix(in srgb, var(--charcoal) 18%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .site-button:active {
+    transform: translateY(0) scale(0.99);
+  }
 }
 
 .site-button--primary {
@@ -467,6 +480,16 @@ a {
 }
 
 @keyframes hero-text-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0.42em);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(-0.025em);
+  }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -474,9 +497,19 @@ a {
 }
 
 @keyframes hero-action-in {
+  0% {
+    opacity: 0;
+    transform: translateY(1.1rem) scale(0.97);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(-0.08rem) scale(1.01);
+  }
+
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -5926,11 +5959,23 @@ h3,
 
 @media (prefers-reduced-motion: reduce) {
   .hero__title span,
+  .hero__subtitle,
   .hero__action,
   .hero__media,
   .hero__image {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .site-button,
+  .site-button svg {
+    transition: none;
+  }
+
+  .site-button:hover,
+  .site-button:active {
+    box-shadow: none;
     transform: none;
   }
 }
