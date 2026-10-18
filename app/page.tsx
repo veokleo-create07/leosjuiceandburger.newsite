@@ -84,12 +84,12 @@ export default function Home() {
               {/* oxlint-disable-next-line next/no-img-element -- avoids a vinext next/image runtime conflict */}
               <img
                 className="hero__image"
-                src="/images/leos-hero-burger.jpg"
-                srcSet="/images/leos-hero-burger-800.jpg 800w, /images/leos-hero-burger.jpg 1672w"
+                src="/images/leos-homepage-hero.jpg"
+                srcSet="/images/leos-homepage-hero.jpg 800w"
                 sizes="(max-width: 67.99rem) calc(100vw - 2.5rem), 46vw"
                 alt="Frisch zubereiteter Burger bei Leo's Juice & Burger"
-                width="1672"
-                height="941"
+                width="800"
+                height="800"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
