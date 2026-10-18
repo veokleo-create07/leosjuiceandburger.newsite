@@ -5,8 +5,8 @@ import { useRef, useState } from 'react';
 const galleryItems = [
   {
     id: 'burgers',
-    label: 'Burgers',
-    description: 'Handgeformt, heiß gegrillt und direkt aus unserer offenen Küche.',
+    label: 'Burger',
+    description: 'Von Hand gemacht.',
     src: '/images/food-experience-kitchen.jpg',
     srcSet:
       '/images/food-experience-kitchen-800.jpg 800w, /images/food-experience-kitchen.jpg 1672w',
@@ -17,8 +17,8 @@ const galleryItems = [
   },
   {
     id: 'sides',
-    label: 'Sides',
-    description: 'Goldbraun, knusprig und genau richtig zum Teilen. Oder auch nicht.',
+    label: 'Beilagen',
+    description: 'Knusprig und goldbraun.',
     src: '/images/food-experience-fries.jpg',
     srcSet:
       '/images/food-experience-fries-640.jpg 640w, /images/food-experience-fries.jpg 1024w',
@@ -29,8 +29,8 @@ const galleryItems = [
   },
   {
     id: 'fresh-juices',
-    label: 'Fresh Juices',
-    description: 'Frisch gepresst, leuchtend und die kühle Antwort auf jeden Burger.',
+    label: 'Säfte',
+    description: 'Frisch gepresst.',
     src: '/images/food-experience-drinks.jpg',
     srcSet:
       '/images/food-experience-drinks-640.jpg 640w, /images/food-experience-drinks.jpg 1145w',

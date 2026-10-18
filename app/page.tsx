@@ -48,13 +48,12 @@ export default function Home() {
         <section id="hero" className="hero" aria-labelledby="hero-title">
           <Container className="hero__inner">
             <div className="hero__copy">
-              <p className="hero__eyebrow">Leo’s · Lübeck-Kücknitz</p>
               <h1 id="hero-title" className="hero__title">
                 <span>Frisch gemacht.</span>
                 <span>Richtig lecker.</span>
               </h1>
               <p className="hero__subtitle">
-                Handgemachte Burger und frische Säfte in Lübeck-Kücknitz.
+                Handgemachte Burger. Frische Säfte.
               </p>
               <div className="hero__actions" aria-label="Leo's besuchen oder bestellen">
                 <SiteButtonLink
@@ -122,10 +121,6 @@ export default function Home() {
                 <span>Mit Liebe gemacht.</span>
                 <span>Frisch serviert.</span>
               </h2>
-              <p>
-                Drei Favoriten, eine Haltung: gute Zutaten, echtes Handwerk und
-                Geschmack ohne Umwege.
-              </p>
             </header>
 
             <FoodGallery />

@@ -10,8 +10,7 @@ type Locale = 'de' | 'en';
 const copy = {
   de: {
     title: 'Gutes Essen verschenken.',
-    description:
-      'Ein Leo’s Gutschein für handgemachte Burger und frische Säfte – zum Verschenken und gemeinsam Genießen.',
+    description: 'Ein Stück Leo’s zum Verschenken.',
     language: 'Sprache wählen',
     cardLabel: 'Gutschein',
     cardLine: 'Gutes Essen. Mit Liebe gemacht.',
@@ -20,8 +19,7 @@ const copy = {
   },
   en: {
     title: 'Give the gift of good food.',
-    description:
-      'A Leo’s gift voucher for handmade burgers and fresh juices – made for sharing a good meal.',
+    description: 'A little Leo’s to give.',
     language: 'Choose language',
     cardLabel: 'Gift voucher',
     cardLine: 'Good food. Made with love.',

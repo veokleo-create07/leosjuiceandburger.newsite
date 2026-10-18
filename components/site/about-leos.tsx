@@ -8,25 +8,15 @@ const aboutCopy = {
   de: {
     label: 'Über Leo’s',
     heading: 'Gutes Essen. Mit Liebe gemacht.',
-    paragraphs: [
-      'Bei Leo’s kommen Burger nicht von der Stange. Wir bereiten sie von Hand zu, kombinieren sie mit frischen Zutaten und servieren dazu frische Säfte.',
-      'Direkt, unkompliziert und mit Liebe gemacht – so schmeckt Leo’s in Lübeck-Kücknitz.',
-    ],
-    details: ['Handgemachte Burger', 'Frische Zutaten', 'Frische Säfte'],
+    description: 'Handgemachte Burger, frische Zutaten und Säfte – mit Liebe gemacht in Lübeck-Kücknitz.',
     imageAlt: 'Restaurantbereich mit offener Küche und warmem Licht',
-    imageCaption: 'Leo’s in Lübeck-Kücknitz',
     languageLabel: 'Sprache wählen',
   },
   en: {
     label: 'About Leo’s',
     heading: 'Good food. Made with love.',
-    paragraphs: [
-      'At Leo’s, burgers are never off the shelf. We make them by hand, pair them with fresh ingredients and serve fresh juices alongside them.',
-      'Straightforward, easy-going and made with love – that is Leo’s in Lübeck-Kücknitz.',
-    ],
-    details: ['Handmade burgers', 'Fresh ingredients', 'Fresh juices'],
+    description: 'Handmade burgers, fresh ingredients and juices – made with love in Lübeck-Kücknitz.',
     imageAlt: 'Restaurant interior with an open kitchen and warm lighting',
-    imageCaption: 'Leo’s in Lübeck-Kücknitz',
     languageLabel: 'Choose language',
   },
 } as const;
@@ -49,7 +39,6 @@ export function AboutLeos() {
           loading="lazy"
           decoding="async"
         />
-        <figcaption>{copy.imageCaption}</figcaption>
       </figure>
 
       <div className="about-leos__content">
@@ -72,16 +61,8 @@ export function AboutLeos() {
         <h2 id="about-leos-title">{copy.heading}</h2>
 
         <div className="about-leos__body">
-          {copy.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          <p>{copy.description}</p>
         </div>
-
-        <ul className="about-leos__details">
-          {copy.details.map((detail) => (
-            <li key={detail}>{detail}</li>
-          ))}
-        </ul>
       </div>
     </div>
   );

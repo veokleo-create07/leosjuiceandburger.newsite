@@ -9,7 +9,7 @@ const copy = {
   de: {
     title: 'Entdecke unsere Speisekarte',
     eyebrow: 'Die Leo’s Auswahl',
-    intro: 'Ausgewählte Klassiker aus unserer aktuellen Online-Speisekarte.',
+    intro: 'Unsere Klassiker.',
     servingSuggestion: 'Serviervorschlag',
     order: 'Jetzt bestellen',
     note: 'Preise können im Restaurant oder auf der Bestellplattform abweichen.',
@@ -19,7 +19,7 @@ const copy = {
   en: {
     title: 'Discover our menu',
     eyebrow: 'The Leo’s selection',
-    intro: 'Selected favourites from our current online menu.',
+    intro: 'Our favourites.',
     servingSuggestion: 'Serving suggestion',
     order: 'Order now',
     note: 'Prices may differ in the restaurant or on the ordering platform.',

@@ -48,8 +48,7 @@ const copy = {
     eyebrow: 'Google Rezensionen',
     heading: 'Das sagen unsere Gäste',
     languageLabel: 'Sprache wählen',
-    score: 'Essen, Service und Atmosphäre: jeweils 5 von 5',
-    original: 'Originale Google Rezension',
+    score: '5 von 5 Sternen',
     viewOnGoogle: 'Auf Google ansehen',
     previous: 'Vorherige Rezension',
     next: 'Nächste Rezension',
@@ -59,8 +58,7 @@ const copy = {
     eyebrow: 'Google reviews',
     heading: 'What our guests say',
     languageLabel: 'Choose language',
-    score: 'Food, service and atmosphere: 5 out of 5 each',
-    original: 'Original Google review',
+    score: '5 out of 5 stars',
     viewOnGoogle: 'View on Google',
     previous: 'Previous review',
     next: 'Next review',
@@ -131,13 +129,11 @@ export function ReviewsCarousel() {
           </div>
           <div className="review-carousel__stars" aria-label={ui.score}>
             <span aria-hidden="true">★★★★★</span>
-            <small>{ui.score}</small>
           </div>
           <blockquote lang="de">{review.quote}</blockquote>
           <footer className="review-carousel__meta">
             <div>
               <strong>{review.author}</strong>
-              <span>{ui.original}</span>
             </div>
             <div className="review-carousel__place">
               <MapPin aria-hidden="true" />
